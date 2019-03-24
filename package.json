@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node inspect index.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,7 @@
   },
   "homepage": "https://github.com/caoxinghua/Node.js#readme",
   "description": "",
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
