@@ -18,6 +18,9 @@
   "homepage": "https://github.com/caoxinghua/Node.js#readme",
   "description": "",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mongodb": "^3.2.2",
+    "mongoose": "^5.4.20",
+    "validator": "^10.11.0"
   }
 }
