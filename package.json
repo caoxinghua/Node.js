@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "debug": "node inspect index.js",
-    "test": "jest"
+    "start": "env-cmd ./config/dev.env node index.js",
+    "debug": "env-cmd ./config/dev.env node inspect index.js",
+    "test": "env-cmd ./config/test.env jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -23,12 +26,14 @@
     "@sendgrid/mail": "^6.3.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "env-cmd": "^8.0.2",
     "express": "^4.16.4",
     "jest": "^24.5.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.2.2",
     "mongoose": "^5.4.20",
     "multer": "^1.4.1",
+    "supertest": "^4.0.2",
     "validator": "^10.11.0"
   }
 }

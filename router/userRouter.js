@@ -19,7 +19,7 @@ const upload = multer({
 //myUpload is the key of Http request.body, form-data key 
 // multer will send error by html file. So. use callback function to handle error
 router.post('/users/upload', auth, upload.single('myUpload'), async (req, res) => {
-    req.user.profileImage = req.file.buffer;
+    req.user.profile = req.file.buffer;
     await req.user.save();
     res.send();
 }, (err, req, res, next) => {

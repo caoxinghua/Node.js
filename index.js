@@ -1,14 +1,5 @@
-const express = require('express');
-const bodyparser = require('body-parser');
-const userRouter = require('./router/userRouter');
+const app = require('./app');
 
-require('./db/mongoose');
-
-const app = express();
-app.use(bodyparser.json());
-app.use(userRouter);
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log('Node.js Server Up');
 });

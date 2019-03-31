@@ -2,7 +2,6 @@ const validator = require('validator');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const keys = require('../keys');
 
 Schema = mongoose.Schema;
 
@@ -99,7 +98,7 @@ UserSchema.statics.checkCredentials = async function (userPassword, reqPassword)
 
 UserSchema.methods.generateAuthTokenAndSave = async function(){
     const user = this;
-    const token = jwt.sign({_id: user._id.toString()}, keys.SECRETKEY, { expiresIn: '24 hours'});
+    const token = jwt.sign({_id: user._id.toString()}, process.env.SECRETKEY, { expiresIn: '24 hours'});
     user.tokens = user.tokens.concat({token});
     await user.save();
     return token;
